@@ -6,7 +6,7 @@ const props = defineProps({
 });
 
 function getImageURL(img) {
-  return new URL(`../assets/img/${img}`, import.meta.url);
+  return new URL(`../assets/img/${img}`, import.meta.url).href;
 }
 </script>
 <template>
@@ -20,6 +20,7 @@ function getImageURL(img) {
           :src="getImageURL(item.img)"
           alt="Illustrate image"
           class="w-full h-auto max-h-[520px] object-cover rounded hidden md:block"
+          loading="lazy"
         />
       </div>
       <div
@@ -73,6 +74,7 @@ function getImageURL(img) {
           :src="getImageURL(item.img)"
           alt="Illustrate image"
           class="w-full h-auto max-h-[520px] object-cover rounded hidden md:block"
+          loading="lazy"
         />
       </div>
     </div>
