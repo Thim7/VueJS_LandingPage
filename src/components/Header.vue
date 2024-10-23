@@ -28,6 +28,7 @@ window.addEventListener("scroll", () => {
     <header
       v-if="aboveFold"
       class="inset-x-0 top-0 z-50 fixed transition-opacity ease-in"
+      v-motion-fade-visible
     >
       <nav
         class="flex items-center justify-between p-6 lg:px-8"
@@ -196,6 +197,7 @@ window.addEventListener("scroll", () => {
     <header
       v-else
       class="inset-x-0 top-0 z-50 fixed border-b bg-black/75 transition-opacity ease-out"
+      v-motion-fade-visible
     >
       <nav
         class="flex items-center justify-between p-6 lg:px-8"

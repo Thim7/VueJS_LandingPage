@@ -38,7 +38,10 @@ const CompanyInfo = [
 ];
 </script>
 <template>
-  <section class="flex flex-col divide-y divide-white sm:px-8 py-8">
+  <footer
+    class="flex flex-col divide-y divide-white sm:px-8 py-8"
+    v-motion-slide-visible-bottom
+  >
     <div
       class="grid gap-8 auto-cols-auto md:grid-cols-2 grid-flow-row place-content-center divide-y divide-white md:divide-y-0 place-items-center sm:px-8 py-8 flex-wrap"
     >
@@ -76,5 +79,5 @@ const CompanyInfo = [
     <p class="pt-2 text-xs text-white/75">
       Copyright 2023 MNTN, Inc. Terms & Privacy
     </p>
-  </section>
+  </footer>
 </template>

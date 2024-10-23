@@ -1,5 +1,6 @@
 <script setup>
 import { ArrowRightIcon } from "@heroicons/vue/24/outline";
+import { MotionComponent, MotionGroupComponent } from "@vueuse/motion";
 import { defineProps } from "vue";
 const props = defineProps({
   intro: Array,
@@ -16,15 +17,21 @@ function getImageURL(img) {
       class="grid grid-cols-2 grid-flow-row gap-8 lg:gap-32 mb-48"
     >
       <div class="md:col-span-1">
-        <img
+        <MotionComponent
+          preset="slideVisibleLeft"
+          :duration="700"
+          is="img"
           :src="getImageURL(item.img)"
           alt="Illustrate image"
           class="w-full h-auto max-h-[520px] object-cover rounded hidden md:block"
           loading="lazy"
         />
       </div>
-      <div
-        class="relative w-full flex flex-col items-start space-y-8 col-span-2 md:col-span-1 shrink-0"
+      <MotionGroupComponent
+        class="intro-container relative w-full flex flex-col items-start space-y-8 col-span-2 md:col-span-1 shrink-0"
+        preset="slideVisibleRight"
+        :duration="700"
+        is="div"
       >
         <div class="absolute top-[-32px] start-[-64px] -z-0">
           <h1 class="text-9xl opacity-30">0{{ index + 1 }}</h1>
@@ -44,11 +51,14 @@ function getImageURL(img) {
         <button class="text-primary">
           Read more <ArrowRightIcon class="w-6 h-6 inline" />
         </button>
-      </div>
+      </MotionGroupComponent>
     </div>
     <div v-else class="grid grid-cols-2 grid-flow-row gap-8 lg:gap-32 mb-48">
-      <div
+      <MotionGroupComponent
         class="relative w-full flex flex-col items-start space-y-8 col-span-2 md:col-span-1"
+        preset="slideVisibleLeft"
+        :duration="700"
+        is="div"
       >
         <div class="absolute top-[-32px] start-[-64px] -z-0">
           <h1 class="text-9xl opacity-30">0{{ index + 1 }}</h1>
@@ -68,9 +78,12 @@ function getImageURL(img) {
         <button class="text-primary">
           Read more <ArrowRightIcon class="w-6 h-6 inline" />
         </button>
-      </div>
+      </MotionGroupComponent>
       <div class="md:col-span-1">
-        <img
+        <MotionComponent
+          preset="slideVisibleRight"
+          :duration="700"
+          is="img"
           :src="getImageURL(item.img)"
           alt="Illustrate image"
           class="w-full h-auto max-h-[520px] object-cover rounded hidden md:block"

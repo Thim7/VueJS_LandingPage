@@ -3,6 +3,7 @@ import { ArrowDownIcon } from "@heroicons/vue/24/outline";
 import Header from "./components/Header.vue";
 import Body from "./components/Body.vue";
 import Footer from "./components/Footer.vue";
+import { MotionGroupComponent } from "@vueuse/motion";
 </script>
 
 <template>
@@ -13,8 +14,11 @@ import Footer from "./components/Footer.vue";
       class="grid grid-cols-4 grid-flow-row gap-4 absolute top-[50%] -translate-y-1/2 px-8"
     >
       <div class="col-span-1">
-        <div
+        <MotionGroupComponent
           class="hidden sm:flex relative end-8 lg:end-28 top-32 lg:top-0 items-center rotate-90 space-x-2 place-content-center lg:place-content-end"
+          preset="slideVisibleLeft"
+          :duration="700"
+          is="div"
         >
           <p class="">Follow us</p>
           <svg
@@ -81,10 +85,15 @@ import Footer from "./components/Footer.vue";
               </g>
             </g>
           </svg>
-        </div>
+        </MotionGroupComponent>
       </div>
 
-      <div class="w-full col-span-2 flex flex-col space-y-10">
+      <MotionGroupComponent
+        class="w-full col-span-2 flex flex-col space-y-10"
+        preset="slideVisibleLeft"
+        :duration="700"
+        is="div"
+      >
         <div class="inline-flex items-center space-x-2 w-full">
           <div
             class="w-[10%] h-[0.1rem] border-t-2 border-primary leading-[80%]"
@@ -97,7 +106,7 @@ import Footer from "./components/Footer.vue";
         <p>
           scroll down <ArrowDownIcon class="w-6 h-6 inline animate-bounce" />
         </p>
-      </div>
+      </MotionGroupComponent>
 
       <div class="col-span-1"></div>
     </div>
