@@ -16,7 +16,7 @@ import { MotionGroupComponent } from "@vueuse/motion";
       <div class="col-span-1">
         <MotionGroupComponent
           class="hidden sm:flex relative end-8 lg:end-28 top-32 lg:top-0 items-center rotate-90 space-x-2 place-content-center lg:place-content-end"
-          preset="slideVisibleLeft"
+          preset="slideVisibleOnceLeft"
           :duration="700"
           is="div"
         >
@@ -90,7 +90,7 @@ import { MotionGroupComponent } from "@vueuse/motion";
 
       <MotionGroupComponent
         class="w-full col-span-2 flex flex-col space-y-10"
-        preset="slideVisibleLeft"
+        preset="slideVisibleOnceLeft"
         :duration="700"
         is="div"
       >

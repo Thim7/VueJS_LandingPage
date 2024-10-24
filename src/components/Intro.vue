@@ -18,7 +18,7 @@ function getImageURL(img) {
     >
       <div class="md:col-span-1">
         <MotionComponent
-          preset="slideVisibleLeft"
+          preset="slideVisibleOnceLeft"
           :duration="700"
           is="img"
           :src="getImageURL(item.img)"
@@ -29,7 +29,7 @@ function getImageURL(img) {
       </div>
       <MotionGroupComponent
         class="intro-container relative w-full flex flex-col items-start space-y-8 col-span-2 md:col-span-1 shrink-0"
-        preset="slideVisibleRight"
+        preset="slideVisibleOnceRight"
         :duration="700"
         is="div"
       >
@@ -56,7 +56,7 @@ function getImageURL(img) {
     <div v-else class="grid grid-cols-2 grid-flow-row gap-8 lg:gap-32 mb-48">
       <MotionGroupComponent
         class="relative w-full flex flex-col items-start space-y-8 col-span-2 md:col-span-1"
-        preset="slideVisibleLeft"
+        preset="slideVisibleOnceLeft"
         :duration="700"
         is="div"
       >
@@ -81,7 +81,7 @@ function getImageURL(img) {
       </MotionGroupComponent>
       <div class="md:col-span-1">
         <MotionComponent
-          preset="slideVisibleRight"
+          preset="slideVisibleOnceRight"
           :duration="700"
           is="img"
           :src="getImageURL(item.img)"
